@@ -1,1 +1,1 @@
-# Demo_HyperParameters_and_Schedulers
+Demonstrate 1) impact of learning rate, which is one of the most important hyper-parameters of optimization algorithms, on training convergence and the importance of its tune-up case by case; and 2) how to use schedulers to adjust learning rate for better convergence and performance. 
