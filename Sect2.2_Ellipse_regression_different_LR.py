@@ -36,7 +36,7 @@ def main():
     xaxisoffset = c  # offset of the center of the ellipse from the origin in this case
     nsamples = 512
     batch_size = 64
-    epoch = 100  # test 100, 400
+    epoch = 400  # test 100, 400
 
     # initWa = torch.rand([], device=device, requires_grad=True)
     # initWb = torch.rand([], device=device, requires_grad=True)
@@ -54,7 +54,7 @@ def main():
         optimizer = optim.SGD(thenet.parameters(), lr=learning_rate, momentum=0.0)
     elif optim_algo == 'SGD_Momentum':
         # ----- hyper-parameters for the SGD_with_Momentum optimizer -----
-        learning_rate = 0.00015  # 0.012, 0.01, 0.005, 0.001, 0.00015
+        learning_rate = 0.012  # 0.012, 0.01, 0.005, 0.001, 0.00015
         momentum = 0.9
         dampening = 0.0
         optimizer = optim.SGD(thenet.parameters(), lr=learning_rate, momentum=momentum, dampening=dampening)
@@ -143,7 +143,7 @@ def main():
         plt.annotate(strEquation, xy=(x0, y0), xycoords='data',
                      xytext=(+0.75, 1.75), textcoords='data', fontsize=16,
                      arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=.2"))
-        plt.text(1.0, 1.5, 'Result of SGD_w_Momentum', color='black', fontsize=12)
+        plt.text(1.0, 1.56, 'Result of \nSGD_w_Momentum', color='black', fontsize=12, ha='left', va='top')
         plt.text(-1.8, 1.7, 'Learning Rate={}\n'.format(learning_rate)+'Epoch={}'.format(epoch), color='black', fontsize=12)
 
         figfilename = r'results/Sect2.2_' + optim_algo + '_lr{}'.format(learning_rate) + '_Epoch{}'.format(epoch) + '.png'
