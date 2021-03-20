@@ -213,9 +213,22 @@ def main():
     anim = animation.FuncAnimation(fig, animate, init_func=init, frames=nframes, interval=intervalms, blit=True)
 
     # save the animation as an mp4.  This requires ffmpeg or mencoder to be installed.
-    anim.save(r'results/Animation_Adam_Scheduler3.3.mp4', fps=30, bitrate=1800)
+    anim.save(r'Results/Part5_Fig16_Animation_Adam_w_MultiplicativeLR_Scheduler.mp4', fps=30, bitrate=1800)
 
     plt.show()
+
+    # extra: plot the gradients of Wa and Wb for the case of LR=0.012 and epochs=400
+    # to demonstrate the effect of Momentum on optimization
+    flag_generate_Fig15 = True
+    if flag_generate_Fig15:
+        fig = plt.figure(figsize=(12, 6))
+        plt.plot(lrTraces_Adam3[:30], '-', label='lr_gamma=0.80', lw=1)
+        plt.plot(lrTraces_Adam4[:30], '-r', label='lr_gamma=0.50', lw=1)
+        plt.xlabel("Number of Updates during Training")
+        plt.ylabel("Learning Rate")
+        plt.legend()
+        plt.savefig(r'Results/Part5_Fig15_Demonstrate_effect_of_scheduler.png')
+    # -------------------------------------------
 
     print('Done!')
 

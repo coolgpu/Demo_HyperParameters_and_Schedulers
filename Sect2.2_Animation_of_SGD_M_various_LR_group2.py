@@ -217,6 +217,7 @@ def main():
     plt.show()
 
     # extra: plot the gradients of Wa and Wb for the case of LR=0.012 and epochs=400
+    # to demonstrate the effect of Momentum on optimization
     flag_generate_Fig13 = True
     if flag_generate_Fig13:
         fig = plt.figure(figsize=(12, 6))

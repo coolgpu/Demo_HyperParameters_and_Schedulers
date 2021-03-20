@@ -213,7 +213,7 @@ def main():
     anim = animation.FuncAnimation(fig, animate, init_func=init, frames=nframes, interval=intervalms, blit=True)
 
     # save the animation as an mp4.  This requires ffmpeg or mencoder to be installed.
-    anim.save(r'results/Animation_Adam_Scheduler3.2.mp4', fps=30, bitrate=1800)
+    anim.save(r'results/Part5_Fig14_Animation_Adam_w_MultiStepLR_Scheduler.mp4', fps=30, bitrate=1800)
 
     plt.show()
 
